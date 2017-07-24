@@ -91,8 +91,8 @@ public class CreateGatewayReceiverCommand implements GfshCommand {
       }
 
       ResultCollector<?, ?> resultCollector =
-          CliUtil.executeFunction(GatewayReceiverCreateFunction.INSTANCE,
-              gatewayReceiverFunctionArgs, membersToCreateGatewayReceiverOn);
+          CliUtil.executeFunction(new GatewayReceiverCreateFunction(), gatewayReceiverFunctionArgs,
+              membersToCreateGatewayReceiverOn);
       @SuppressWarnings("unchecked")
       List<CliFunctionResult> gatewayReceiverCreateResults =
           (List<CliFunctionResult>) resultCollector.getResult();

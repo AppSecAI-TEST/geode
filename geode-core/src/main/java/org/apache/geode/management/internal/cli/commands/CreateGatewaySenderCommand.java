@@ -126,7 +126,7 @@ public class CreateGatewaySenderCommand implements GfshCommand {
       }
 
       ResultCollector<?, ?> resultCollector =
-          CliUtil.executeFunction(GatewaySenderCreateFunction.INSTANCE, gatewaySenderFunctionArgs,
+          CliUtil.executeFunction(new GatewaySenderCreateFunction(), gatewaySenderFunctionArgs,
               membersToCreateGatewaySenderOn);
       @SuppressWarnings("unchecked")
       List<CliFunctionResult> gatewaySenderCreateResults =

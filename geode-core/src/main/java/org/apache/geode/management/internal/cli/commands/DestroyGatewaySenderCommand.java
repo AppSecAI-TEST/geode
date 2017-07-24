@@ -66,7 +66,7 @@ public class DestroyGatewaySenderCommand implements GfshCommand {
       }
 
       ResultCollector<?, ?> resultCollector =
-          CliUtil.executeFunction(GatewaySenderDestroyFunction.INSTANCE,
+          CliUtil.executeFunction(new GatewaySenderDestroyFunction(),
               gatewaySenderDestroyFunctionArgs, membersToDestroyGatewaySenderOn);
       @SuppressWarnings("unchecked")
       List<CliFunctionResult> gatewaySenderDestroyResults =
